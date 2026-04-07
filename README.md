@@ -75,7 +75,7 @@ For this project:
 
 ```bash
 curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/master/scripts/add-site.sh
-sudo bash add-site.sh food 3000 "Food Recipes Website" && rm add-site.sh
+sudo bash add-site.sh recipes 3000 "Food Recipes Website" && rm add-site.sh
 ```
 
 This creates the system user, app directory, systemd service, and grants the `deploy` user permission to restart the service.
