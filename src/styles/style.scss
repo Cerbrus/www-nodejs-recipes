@@ -1,0 +1,329 @@
+// ---------- Palette ----------
+
+$color-bg: #faf7f2;
+$color-surface: #fff;
+$color-text: #2d2a24;
+$color-heading: #3a3630;
+$color-muted: #7a746a;
+$color-link: #8b7e6a;
+$color-accent: #c07d42;
+$color-accent-light: #f5e6d0;
+$color-border: #ebe5db;
+$radius: 14px;
+$radius-sm: 10px;
+
+// ---------- Reset ----------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ---------- Base ----------
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: $color-bg;
+  color: $color-text;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+// ---------- Hero header (index) ----------
+
+.hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2rem;
+  background: linear-gradient(180deg, $color-accent-light 0%, $color-bg 100%);
+
+  .hero-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $color-heading;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    color: $color-muted;
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+  }
+}
+
+// ---------- Recipe header ----------
+
+.recipe-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: $color-heading;
+    letter-spacing: -0.02em;
+  }
+
+  .recipe-tagline {
+    color: $color-muted;
+    margin-top: 0.3rem;
+    font-size: 1.05rem;
+  }
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: $color-link;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+// ---------- Card grid ----------
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 4rem;
+  flex: 1;
+}
+
+.card {
+  background: $color-surface;
+  border-radius: $radius;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid $color-border;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+
+    .card-cta {
+      color: $color-accent;
+    }
+  }
+
+  .card-image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  .card-body {
+    padding: 1rem 1.25rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    color: $color-heading;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 0.92rem;
+    color: $color-muted;
+    flex: 1;
+  }
+
+  .card-cta {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-link;
+    transition: color 0.2s;
+  }
+}
+
+// ---------- Recipe page ----------
+
+.recipe {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+
+  > img {
+    width: 600px;
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: $radius;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .recipe-content {
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    padding: 2rem;
+    margin-top: 1.75rem;
+  }
+
+  .section-icon {
+    margin-right: 0.35rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    color: $color-heading;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid $color-accent-light;
+  }
+
+  .ingredients + .steps {
+    margin-top: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 0.4rem 0 0.4rem 1.5rem;
+      position: relative;
+      border-bottom: 1px solid #f0ece6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .ingredient-note {
+        display: block;
+        font-size: 0.85rem;
+        color: $color-muted;
+        font-style: italic;
+      }
+
+      &::before {
+        content: "\2022";
+        color: $color-accent;
+        font-weight: bold;
+        position: absolute;
+        left: 0.25rem;
+      }
+    }
+  }
+
+  ol {
+    padding-left: 0;
+    counter-reset: step;
+    list-style: none;
+
+    li {
+      padding: 0.6rem 0 0.6rem 2.5rem;
+      position: relative;
+      border-bottom: 1px solid #f0ece6;
+      counter-increment: step;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .step-options {
+        margin-top: 0.5rem;
+        padding-left: 0;
+        list-style: none;
+
+        li {
+          padding: 0.35rem 0 0.35rem 1.25rem;
+          counter-increment: none;
+          border-bottom: none;
+          font-size: 0.92rem;
+          color: $color-muted;
+
+          &::before {
+            content: "\2013";
+            position: absolute;
+            left: 0;
+            top: 0.35rem;
+            width: auto;
+            height: auto;
+            background: none;
+            color: $color-accent;
+            font-weight: normal;
+            font-size: inherit;
+            border-radius: 0;
+            display: inline;
+            align-items: unset;
+            justify-content: unset;
+          }
+        }
+      }
+
+      &::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        background: $color-accent-light;
+        color: $color-accent;
+        font-weight: 600;
+        font-size: 0.85rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// ---------- Footer ----------
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: $color-muted;
+  font-size: 0.85rem;
+  border-top: 1px solid $color-border;
+  margin-top: auto;
+}

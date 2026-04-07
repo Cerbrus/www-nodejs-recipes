@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- pan -->
+  <circle cx="50" cy="55" r="30" fill="#444" />
+  <circle cx="50" cy="55" r="26" fill="#666" />
+  <!-- handle -->
+  <rect x="72" y="50" width="24" height="10" rx="3" fill="#444" />
+  <!-- egg white -->
+  <ellipse cx="48" cy="54" rx="18" ry="15" fill="#fff" />
+  <!-- yolk -->
+  <circle cx="48" cy="52" r="8" fill="#f5c542" />
+</svg>

@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "cheese-sandwich",
+    "title": "Cheese Sandwich",
+    "image": "cheese-sandwich.jpg",
+    "description": "A classic, simple cheese sandwich. Yes, this counts as cooking.",
+    "ingredients": [
+      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
+      { "name": "Butter", "subtitle": "To taste" },
+      { "name": "Cheese", "subtitle": "Cheddar, gouda, Swiss, brie, etc." }
+    ],
+    "steps": [
+      "Butter both slices of bread.",
+      "Layer cheese slices on one side.",
+      "Close the sandwich. Congratulations, chef."
+    ]
+  },
+  {
+    "slug": "ham-sandwich",
+    "title": "Ham Sandwich",
+    "image": "ham-sandwich.jpg",
+    "description": "A hearty ham sandwich. Slightly fancier than cheese. Barely.",
+    "ingredients": [
+      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
+      { "name": "Butter", "subtitle": "To taste" },
+      { "name": "Ham", "subtitle": "Smoked, honey-glazed, deli-sliced, etc." }
+    ],
+    "steps": [
+      "Butter both slices of bread.",
+      "Layer ham slices on one side.",
+      "Close the sandwich. Try not to brag about your culinary skills."
+    ]
+  },
+  {
+    "slug": "hagelslag-sandwich",
+    "title": "Hagelslag Sandwich",
+    "image": "hagelslag-sandwich.jpg",
+    "description": "A Dutch classic \u2014 chocolate sprinkles on bread. Don't knock it till you've tried it.",
+    "ingredients": [
+      { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
+      { "name": "Butter", "subtitle": "To taste" },
+      { "name": "Hagelslag", "subtitle": "Milk chocolate, dark chocolate, fruit-flavored, etc." }
+    ],
+    "steps": [
+      "Butter a slice of bread generously.",
+      "Cover the buttered side with a thick layer of hagelslag.",
+      "Optionally top with a second slice, fold it closed, or eat open-faced like the maniac you are."
+    ]
+  },
+  {
+    "slug": "other-sandwich",
+    "title": "Other Sandwich",
+    "image": "other-sandwich.jpg",
+    "description": "We don't have what you want, so figure it out yourself.",
+    "ingredients": [
+      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, rye, ciabatta, etc." },
+      { "name": "Butter or spread", "subtitle": "Butter, mayo, mustard, hummus, etc. To taste" },
+      { "name": "Filling of choice", "subtitle": "Peanut butter, jam, Nutella, cream cheese, cold cuts, veggies, etc." }
+    ],
+    "steps": [
+      "Spread your condiment of choice on the bread.",
+      "Add your filling.",
+      "Close the sandwich. You're on your own from here."
+    ]
+  },
+  {
+    "slug": "tosti",
+    "title": "Tosti",
+    "image": "tosti.jpg",
+    "description": "A hot, crispy grilled sandwich. The pinnacle of Dutch engineering.",
+    "ingredients": [
+      { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
+      { "name": "Butter", "subtitle": "To taste" },
+      { "name": "Cheese", "subtitle": "Gouda, cheddar, emmental, etc." },
+      { "name": "Optional extras", "subtitle": "Ham, tomato, pesto, onion, etc." }
+    ],
+    "steps": [
+      "Butter the outside of both slices of bread.",
+      "Layer cheese (and any extras) between the slices.",
+      {
+        "text": "Grill your tosti:",
+        "options": [
+          "Tosti iron: close and grill until golden, about 3\u20134 minutes.",
+          "Frying pan: toast on medium heat, flipping once, until golden on both sides.",
+          "Oven/grill: place on a baking sheet at 200\u00b0C until the cheese melts and bread is crispy."
+        ]
+      },
+      "Cut diagonally. This is non-negotiable."
+    ]
+  },
+  {
+    "slug": "fried-egg",
+    "title": "Fried Egg",
+    "image": "fried-egg.webp",
+    "description": "A simple egg. Somehow people still manage to mess this up.",
+    "ingredients": [
+      { "name": "Egg", "subtitle": "One or more, any size" },
+      { "name": "Butter or oil", "subtitle": "To taste" },
+      { "name": "Salt & pepper", "subtitle": "To taste" }
+    ],
+    "steps": [
+      "Heat a pan on medium with a little butter or oil.",
+      {
+        "text": "Prepare your egg:",
+        "options": [
+          "Sunny side up: crack into the pan, cook without flipping until the white is set but the yolk is runny.",
+          "Over easy: cook sunny side up, then flip and cook for just 15\u201330 seconds.",
+          "Over medium: flip and cook for about 1 minute for a partially set yolk.",
+          "Over hard: flip and cook for 2\u20133 minutes until the yolk is fully set.",
+          "Scrambled: whisk eggs in a bowl, pour into the pan, and stir gently until just set.",
+          "Omelette: whisk eggs, pour into the pan, let set, add fillings, and fold in half."
+        ]
+      },
+      "Season with salt and pepper.",
+      "Serve immediately. Cold eggs are a cry for help."
+    ]
+  },
+  {
+    "slug": "bringing-your-own",
+    "title": "I'm Bringing My Own",
+    "image": "bringing-your-own.jpg",
+    "description": "Too good for our recipes? Fine. Here's how to heat your leftovers.",
+    "ingredients": [
+      { "name": "Your food", "subtitle": "Leftovers, meal prep, takeout, anything goes" },
+      { "name": "Container", "subtitle": "Tupperware, lunch box, foil-wrapped, etc." }
+    ],
+    "steps": [
+      "Bring your food in a sealed container.",
+      "Store in the fridge if it needs to stay cool.",
+      {
+        "text": "Heat your food (if needed):",
+        "options": [
+          "Microwave: transfer to a microwave-safe container, heat in 1-minute intervals, stir in between.",
+          "Oven: preheat to 180\u00b0C, place in an oven-safe dish, and heat for 10\u201315 minutes.",
+          "Stovetop: pour into a pan and warm on medium heat, stirring occasionally.",
+          "Eat it cold: some things are just fine at room temperature."
+        ]
+      },
+      "Enjoy your meal. You're welcome for the microwave instructions."
+    ]
+  }
+]
