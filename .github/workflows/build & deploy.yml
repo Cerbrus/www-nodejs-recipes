@@ -1,23 +1,39 @@
-name: Deploy
+name: Build & Deploy
 
 on:
   push:
-    branches: [master]
+    branches: [ develop, master ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.2
-
       - uses: actions/setup-node@v6.3.0
         with:
           node-version: lts/*
           cache: npm
-
       - run: npm ci
       - run: npm run build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            dist/
+            node_modules/
+            recipes.json
+            package.json
 
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
       - name: Deploy to Raspberry Pi
         uses: burnett01/rsync-deployments@8.0.2
         with:
@@ -31,11 +47,10 @@ jobs:
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: deploy
           remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
-
       - name: Restart application
         uses: appleboy/ssh-action@v1
         with:
-          host: webhost.cerbrus.nl
+          host: ${{ secrets.DEPLOY_HOST }}
           username: deploy
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           script: sudo systemctl restart recipes
