@@ -35,7 +35,7 @@ The server starts at [http://localhost:3000](http://localhost:3000).
 
 ## Deployment
 
-The app is deployed to a Raspberry Pi at `webhost.cerbrus.nl` via GitHub Actions on push to `main`.
+The app is deployed to a Raspberry Pi at `webhost.cerbrus.nl` via GitHub Actions on push to `master`.
 
 ### Raspberry Pi setup
 
@@ -44,16 +44,24 @@ The setup scripts can be fetched from [Cerbrus/www-nodejs-recipes](https://githu
 **1. Initial setup** — run once on a fresh Raspberry Pi OS Lite install:
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/setup-pi.sh
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/master/scripts/setup-pi.sh
 sudo bash setup-pi.sh && rm setup-pi.sh
 ```
 
 This updates the system, installs Node.js LTS, and creates a `deploy` user for SSH-based deployments.
 
+After running, add your deploy public key so GitHub Actions can SSH in:
+
+```bash
+echo "<your-public-key>" | sudo tee /home/deploy/.ssh/authorized_keys
+sudo chmod 600 /home/deploy/.ssh/authorized_keys
+sudo chown deploy:deploy /home/deploy/.ssh/authorized_keys
+```
+
 **2. Add a site** — run for each site you want to host:
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/master/scripts/add-site.sh
 sudo bash add-site.sh <name> <port> [description] && rm add-site.sh
 ```
 
@@ -66,7 +74,7 @@ sudo bash add-site.sh <name> <port> [description] && rm add-site.sh
 For this project:
 
 ```bash
-curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/master/scripts/add-site.sh
 sudo bash add-site.sh food 3000 "Food Recipes Website" && rm add-site.sh
 ```
 
@@ -75,7 +83,7 @@ This creates the system user, app directory, systemd service, and grants the `de
 ### GitHub Actions
 
 - **Build** (`build.yml`) — Runs on all branches to verify the project builds.
-- **Deploy** (`deploy.yml`) — Runs on push to `main`, builds the project, rsyncs to the Pi, and restarts the service.
+- **Deploy** (`deploy.yml`) — Runs on push to `master`, builds the project, rsyncs to the Pi, and restarts the service.
 
 ### Required secrets
 
