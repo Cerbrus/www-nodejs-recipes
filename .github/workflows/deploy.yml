@@ -28,7 +28,7 @@ jobs:
             recipes.json
             package.json
           remote_path: /opt/recipes/
-          remote_host: $${{ secrets.DEPLOY_HOST }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: deploy
           remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
 
