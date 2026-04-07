@@ -19,7 +19,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy to Raspberry Pi
-        uses: burnett01/rsync-deployments@7.0.2
+        uses: burnett01/rsync-deployments@8.0.2
         with:
           switches: -avz --delete
           path: |
