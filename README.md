@@ -44,7 +44,8 @@ The setup scripts can be fetched from [Cerbrus/www-nodejs-recipes](https://githu
 **1. Initial setup** — run once on a fresh Raspberry Pi OS Lite install:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/setup-pi.sh | sudo bash
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/setup-pi.sh
+sudo bash setup-pi.sh && rm setup-pi.sh
 ```
 
 This updates the system, installs Node.js LTS, and creates a `deploy` user for SSH-based deployments.
@@ -52,7 +53,8 @@ This updates the system, installs Node.js LTS, and creates a `deploy` user for S
 **2. Add a site** — run for each site you want to host:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh | sudo bash -s <name> <port> [description]
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh
+sudo bash add-site.sh <name> <port> [description] && rm add-site.sh
 ```
 
 | Parameter | Description |
@@ -64,7 +66,8 @@ curl -fsSL https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scr
 For this project:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh | sudo bash -s food 3000 "Food Recipes Website"
+curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/main/scripts/add-site.sh
+sudo bash add-site.sh food 3000 "Food Recipes Website" && rm add-site.sh
 ```
 
 This creates the system user, app directory, systemd service, and grants the `deploy` user permission to restart the service.
