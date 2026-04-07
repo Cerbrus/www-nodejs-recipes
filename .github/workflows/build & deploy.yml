@@ -34,15 +34,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
+          path: deploy-staging
       - name: Deploy to Raspberry Pi
         uses: burnett01/rsync-deployments@8.0.2
         with:
           switches: -avz --delete
-          path: |
-            dist/
-            node_modules/
-            recipes.json
-            package.json
+          path: deploy-staging/
           remote_path: /opt/recipes/
           remote_host: ${{ secrets.DEPLOY_HOST }}
           remote_user: deploy
