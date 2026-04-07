@@ -24,6 +24,8 @@ if ! id "$APP_USER" &>/dev/null; then
 fi
 mkdir -p "$APP_DIR"
 chown "$APP_USER":"$APP_USER" "$APP_DIR"
+chmod 775 "$APP_DIR"
+usermod -aG "$APP_USER" deploy
 
 echo "==> Creating systemd service: $APP_NAME.service"
 cat > "/etc/systemd/system/$APP_NAME.service" <<EOF

@@ -9,7 +9,7 @@ const PORT = 3000;
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 app.get("/", (_req: Request, res: Response) => {
   res.render("index", { title: "Simple Recipes", recipes });

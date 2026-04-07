@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run build && node dist/app.js",
     "build": "tsc && npm run build:css && npm run build:copy",
-    "build:css": "sass src/styles/style.scss dist/public/style.css",
-    "build:copy": "cpx \"src/views/**/*\" dist/views && cpx \"src/images/**/*\" dist/public/images"
+    "build:css": "sass src/styles/style.scss dist/style.css",
+    "build:copy": "cpx \"src/views/**/*\" dist/views && cpx \"src/images/**/*\" dist/images"
   },
   "keywords": [],
   "author": "",
