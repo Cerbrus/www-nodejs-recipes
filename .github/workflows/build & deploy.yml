@@ -36,7 +36,7 @@ jobs:
           name: build-output
           path: deploy-staging
       - name: Deploy to Raspberry Pi
-        uses: burnett01/rsync-deployments@v8.0.2
+        uses: burnett01/rsync-deployments@v8
         with:
           switches: -avz --delete
           path: deploy-staging/
