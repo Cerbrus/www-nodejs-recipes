@@ -80,6 +80,10 @@ async function main() {
         res.render("recipe", {title: recipe.title, recipe, locale});
     });
 
+    app.use((_req: Request, res: Response) => {
+        res.redirect("/");
+    });
+
     app.listen(PORT, () => {
         console.log(`Server running at http://localhost:${PORT}`);
     });
