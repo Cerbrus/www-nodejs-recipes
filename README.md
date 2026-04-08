@@ -48,7 +48,17 @@ curl -fsSLO https://raw.githubusercontent.com/Cerbrus/www-nodejs-recipes/master/
 sudo bash setup-pi.sh && rm setup-pi.sh
 ```
 
-This updates the system, installs Node.js LTS, and creates a `deploy` user for SSH-based deployments.
+This updates the system, installs Node.js LTS, creates a `deploy` user for SSH-based deployments, and sets up a fan control service (GPIO 14) to keep the CPU cool.
+
+**Fan control monitoring:**
+
+```bash
+# Check the fan control service status
+systemctl status fan-control.service
+
+# Watch CPU temperature and fan state (updates every 2s)
+watch -n 2 'echo "Temp: $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))°C | Fan: $(pinctrl get 14 | grep -q "hi" && echo ON || echo OFF)"'
+```
 
 After running, add your deploy public key so GitHub Actions can SSH in:
 
