@@ -4,10 +4,10 @@ import i18next from 'i18next';
 import HandlebarsI18n from 'handlebars-i18n';
 import Handlebars from 'handlebars';
 import path from 'path';
-import en from '../../locales/en.json';
-import nl from '../../locales/nl.json';
+import en from 'locales/en.json';
+import nl from 'locales/nl.json';
 import { DEFAULT_LOCALE } from './types';
-import { IndexController, RecipeController } from '../../views/pages';
+import { IndexController, RecipeController } from 'views/pages';
 
 class App {
     private app = express();

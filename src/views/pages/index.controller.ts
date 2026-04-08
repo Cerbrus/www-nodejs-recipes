@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import i18next from 'i18next';
 import allRecipes from '../../recipes.json';
-import type { Locale, RecipeData } from '../../scripts/server';
-import { I18nHelper } from '../../scripts/server';
+import type { Locale, RecipeData } from 'server';
+import { I18nHelper } from 'server';
 
 export class IndexController {
     public render(req: Request, res: Response): void {
