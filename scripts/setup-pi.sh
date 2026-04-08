@@ -27,6 +27,73 @@ if ! id "deploy" &>/dev/null; then
     echo "Add your deploy public key to /home/deploy/.ssh/authorized_keys"
 fi
 
+echo "==> Setting up fan control (GPIO 14)"
+FAN_SCRIPT="/usr/local/bin/fan-control.sh"
+FAN_SERVICE="/etc/systemd/system/fan-control.service"
+
+if [ -f "$FAN_SCRIPT" ]; then
+    echo "    Replacing existing fan control script"
+else
+    echo "    Installing fan control script"
+fi
+
+cat > "$FAN_SCRIPT" << 'FANSCRIPT'
+#!/usr/bin/env bash
+# Fan control for GPIO 14 — keeps CPU temperature in a reasonable range.
+# Turns the fan on above 65°C and off below 55°C (hysteresis prevents rapid toggling).
+set -euo pipefail
+
+GPIO=14
+ON_TEMP=45000   # millidegrees C
+OFF_TEMP=30000
+
+# Export GPIO pin if not already exported
+if [ ! -d "/sys/class/gpio/gpio${GPIO}" ]; then
+    echo "$GPIO" > /sys/class/gpio/export
+    sleep 0.1
+fi
+echo "out" > "/sys/class/gpio/gpio${GPIO}/direction"
+
+cleanup() {
+    echo 0 > "/sys/class/gpio/gpio${GPIO}/value"
+    echo "$GPIO" > /sys/class/gpio/unexport
+    exit 0
+}
+trap cleanup SIGTERM SIGINT
+
+while true; do
+    temp=$(cat /sys/class/thermal/thermal_zone0/temp)
+    fan_state=$(cat "/sys/class/gpio/gpio${GPIO}/value")
+
+    if [ "$temp" -ge "$ON_TEMP" ] && [ "$fan_state" -eq 0 ]; then
+        echo 1 > "/sys/class/gpio/gpio${GPIO}/value"
+    elif [ "$temp" -le "$OFF_TEMP" ] && [ "$fan_state" -eq 1 ]; then
+        echo 0 > "/sys/class/gpio/gpio${GPIO}/value"
+    fi
+
+    sleep 5
+done
+FANSCRIPT
+chmod +x "$FAN_SCRIPT"
+
+cat > "$FAN_SERVICE" << 'UNIT'
+[Unit]
+Description=GPIO 14 CPU fan control
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/local/bin/fan-control.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+UNIT
+
+systemctl daemon-reload
+systemctl enable --now fan-control.service
+echo "Fan control service installed and started"
+
 echo "==> Replacing MOTD"
 cat > /etc/motd << 'MOTD'
  ____                                 ____  ___     ____          _
