@@ -1,30 +1,40 @@
 {
-  "name": "recipes",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.ts",
-  "scripts": {
-    "start": "npm run build && node dist/app.js",
-    "build": "tsc && npm run build:css && npm run build:copy",
-    "build:css": "sass src/styles/style.scss dist/style.css",
-    "build:copy": "cpx \"src/views/**/*\" dist/views && cpx \"src/images/**/*\" dist/images"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "express": "^5.2.1",
-    "express-handlebars": "^9.0.1",
-    "handlebars-i18n": "^1.10.5",
-    "i18next": "^26.0.3"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.5.2",
-    "cpx2": "^8.0.2",
-    "sass": "^1.99.0",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
-  }
+    "name": "recipes",
+    "version": "1.0.0",
+    "description": "",
+    "main": "scripts/app.ts",
+    "scripts": {
+        "start": "npm run build && node dist/scripts/server/app.js",
+        "build": "tsc && npm run build:css && npm run build:copy",
+        "build:css": "sass src/styles/style.scss dist/style.css",
+        "build:copy": "cpx \"src/views/**/*\" dist/views && cpx \"src/images/**/*\" dist/images"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "express": "^5.2.1",
+        "express-handlebars": "^9.0.1",
+        "handlebars-i18n": "^1.10.5",
+        "i18next": "^26.0.3"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.5.2",
+        "@typescript-eslint/eslint-plugin": "7.16.0",
+        "@typescript-eslint/parser": "7.16.0",
+        "@typescript-eslint/utils": "^7.16.0",
+        "cpx2": "^8.0.2",
+        "sass": "^1.99.0",
+        "tsx": "^4.21.0",
+        "typescript": "^6.0.2",
+        "esbuild": "^0.25.0",
+        "esbuild-sass-plugin": "^3.7.0",
+        "eslint": "~8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
+        "prettier": "^2.6.2"
+    }
 }
