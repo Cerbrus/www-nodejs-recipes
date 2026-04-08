@@ -4,8 +4,8 @@
     "description": "",
     "main": "scripts/app.ts",
     "scripts": {
-        "start": "npm run build && node dist/scripts/server/app.js",
-        "build": "tsc && tsc-alias && npm run build:css && npm run build:copy",
+        "start": "yarn build && node dist/scripts/server/app.js",
+        "build": "tsc && tsc-alias && yarn build:css && yarn build:copy",
         "build:css": "sass src/styles/style.scss dist/style.css",
         "build:copy": "cpx \"src/views/**/*\" dist/views && cpx \"src/images/**/*\" dist/images"
     },
