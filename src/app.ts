@@ -73,9 +73,7 @@ async function main() {
         const locale = getLocale(req);
         const raw = allRecipes.find((r) => r.slug === req.params.slug);
         if (!raw) {
-            res.status(404).send(
-                i18next.t("notFound", {lng: locale})
-            );
+            res.redirect("/");
             return;
         }
         const recipe = localizeRecipe(raw, locale);
