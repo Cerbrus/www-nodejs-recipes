@@ -13,27 +13,38 @@ Simple Node.js recipe website using Express and Handlebars, with i18n support (E
 
 ## Project structure
 
-- `src/scripts/app.ts` — Express server entry point (port 3000), i18n init, route registration
-- `src/scripts/helpers.ts` — I18nHelper: locale resolution, recipe localization
-- `src/scripts/lang.ts` — Client-side language switching (localStorage + cookie)
-- `src/scripts/recipe.ts` — Client-side recipe page interactions (sticky back button)
-- `src/scripts/types/` — Shared TypeScript types (`Locale`, `RecipeData`, `RecipeLocalized`)
-- `src/views/layouts/main.handlebars` — Shared HTML layout (head, body wrapper, lang switcher)
-- `src/views/pages/index.controller.ts` — Controller: loads and localizes all recipes for the index
-- `src/views/pages/index.handlebars` — Home page listing all recipes as cards
-- `src/views/pages/recipe.controller.ts` — Controller: loads and localizes a single recipe by slug
-- `src/views/pages/recipe.handlebars` — Recipe detail template
-- `src/locales/[lang].json` — Translation strings
-- `src/recipes.json` — All recipe data (multilingual); adding a recipe means adding an entry here + an image
-- `src/styles/style.scss` — SCSS source
-- `src/images/` — Source images
-- `scripts/` — Deployment shell scripts (`add-site.sh`, `setup-pi.sh`)
-- `dist/` — Build output (gitignored)
+```
+src/
+├── scripts/
+│   ├── server/                   # Server-side scripts
+│   │   ├── app.ts                # Express entry point (port 3000), i18n init, route registration
+│   │   ├── helpers/              # Helper scripts; I18nHelper: locale resolution, recipe localization
+│   │   └── types/                # Server-side types (Locale, RecipeData, RecipeLocalized)
+│   └── client/                   # Client-side scripts (loaded via <script> in templates)
+│       ├── lang.ts               # Client-side language switching (localStorage + cookie)
+│       └── recipe.ts             # Client-side recipe page interactions (sticky back button)
+├── views/
+│   ├── layouts/                  # Handlebars layouts
+│   │   └── main.handlebars       # Shared HTML layout (head, body wrapper, lang switcher)
+│   └── pages/                    # Handlebars page templates + controllers
+│       ├── index.controller.ts   # Controller: loads and localizes all recipes
+│       ├── index.handlebars      # Home page listing all recipes as cards
+│       ├── recipe.controller.ts  # Controller: loads and localizes a single recipe by slug
+│       └── recipe.handlebars     # Recipe detail template
+├── locales/
+│   └── [lang].json               # Translation strings (en, nl)
+├── styles/
+│   └── style.scss                # SCSS source
+├── images/                       # Source images
+└── recipes.json                  # All recipe data (multilingual)
+scripts/                          # Deployment shell scripts (add-site.sh, setup-pi.sh)
+dist/                             # Build output (gitignored)
+```
 
 ## Commands
 
 - `npm start` — Build and start the server
-- `npm run build` — Compile TypeScript, SCSS, and copy views + images to `dist/`
+- `npm run build` — Compile TypeScript (+ resolve path aliases via `tsc-alias`), SCSS, and copy views + images to `dist/`
 - `npm run build:css` — Compile SCSS only
 - `npm run build:copy` — Copy views and images to `dist/`
 
@@ -46,3 +57,4 @@ Simple Node.js recipe website using Express and Handlebars, with i18n support (E
 - Images go in `src/images/` and are referenced by filename in `src/recipes.json`
 - Templates use Handlebars (`{{var}}` for output, `{{#each}}` / `{{#if}}` for logic)
 - Shared HTML boilerplate lives in `src/views/layouts/main.handlebars`
+- Path aliases (`server`, `views`, `locales`) are defined in `tsconfig.json` and resolved at build time by `tsc-alias`
