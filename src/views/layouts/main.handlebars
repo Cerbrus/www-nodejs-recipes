@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="{{locale}}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
-  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="lang-switch">
+<div class="lang-switch">
     <button data-lang="en" title="English">&#127468;&#127463;</button>
     <button data-lang="nl" title="Nederlands">&#127475;&#127473;</button>
-  </div>
-  {{{body}}}
-  <footer>
+</div>
+{{{body}}}
+<footer>
     <p>{{__ "footer"}}</p>
-  </footer>
-  <script src="/scripts/lang.js"></script>
+</footer>
+<script src="/scripts/client/lang.js"></script>
 </body>
 </html>

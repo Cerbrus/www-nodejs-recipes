@@ -1,42 +1,42 @@
 <header class="recipe-header">
-  <a href="/" class="back">{{__ "allRecipes"}}</a>
-  <h1>{{recipe.title}}</h1>
-  <p class="recipe-tagline">{{recipe.description}}</p>
+    <a href="/" class="back">{{__ "allRecipes"}}</a>
+    <h1>{{recipe.title}}</h1>
+    <p class="recipe-tagline">{{recipe.description}}</p>
 </header>
 <main class="recipe">
-  <img src="/images/{{recipe.image}}" alt="{{recipe.title}}">
-  <div class="recipe-content">
-    <section class="ingredients">
-      <h2><span class="section-icon">&#129474;</span> {{__ "ingredients"}}</h2>
-      <ul>
-        {{#each recipe.ingredients}}
-          <li>
-            <strong>{{this.name}}</strong>
-            {{#if this.subtitle}}<span class="ingredient-note">{{this.subtitle}}</span>{{/if}}
-          </li>
-        {{/each}}
-      </ul>
-    </section>
-    <section class="steps">
-      <h2><span class="section-icon">&#128209;</span> {{__ "steps"}}</h2>
-      <ol>
-        {{#each recipe.steps}}
-          {{#if this.options}}
-            <li>
-              {{this.text}}
-              <ul class="step-options">
-                {{#each this.options}}
-                  <li>{{this}}</li>
+    <img src="/images/{{recipe.image}}" alt="{{recipe.title}}">
+    <div class="recipe-content">
+        <section class="ingredients">
+            <h2><span class="section-icon">&#129474;</span> {{__ "ingredients"}}</h2>
+            <ul>
+                {{#each recipe.ingredients}}
+                    <li>
+                        <strong>{{this.name}}</strong>
+                        {{#if this.subtitle}}<span class="ingredient-note">{{this.subtitle}}</span>{{/if}}
+                    </li>
                 {{/each}}
-              </ul>
-            </li>
-          {{else}}
-            <li>{{this}}</li>
-          {{/if}}
-        {{/each}}
-      </ol>
-    </section>
-  </div>
+            </ul>
+        </section>
+        <section class="steps">
+            <h2><span class="section-icon">&#128209;</span> {{__ "steps"}}</h2>
+            <ol>
+                {{#each recipe.steps}}
+                    {{#if this.options}}
+                        <li>
+                            {{this.text}}
+                            <ul class="step-options">
+                                {{#each this.options}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{else}}
+                        <li>{{this}}</li>
+                    {{/if}}
+                {{/each}}
+            </ol>
+        </section>
+    </div>
 </main>
 <a href="/" class="back sticky-back">{{__ "allRecipes"}}</a>
-<script src="/scripts/recipe.js"></script>
+<script src="/scripts/client/recipe.js"></script>
