@@ -1,5 +1,5 @@
 <header class="recipe-header">
-  <a href="/" class="back">&larr; All Recipes</a>
+  <a href="/" class="back">{{__ "allRecipes"}}</a>
   <h1>{{recipe.title}}</h1>
   <p class="recipe-tagline">{{recipe.description}}</p>
 </header>
@@ -7,7 +7,7 @@
   <img src="/images/{{recipe.image}}" alt="{{recipe.title}}">
   <div class="recipe-content">
     <section class="ingredients">
-      <h2><span class="section-icon">&#129474;</span> Ingredients</h2>
+      <h2><span class="section-icon">&#129474;</span> {{__ "ingredients"}}</h2>
       <ul>
         {{#each recipe.ingredients}}
           <li>
@@ -18,10 +18,10 @@
       </ul>
     </section>
     <section class="steps">
-      <h2><span class="section-icon">&#128209;</span> Steps</h2>
+      <h2><span class="section-icon">&#128209;</span> {{__ "steps"}}</h2>
       <ol>
         {{#each recipe.steps}}
-          {{#if this.options}}
+          {{#if this.options}}1
             <li>
               {{this.text}}
               <ul class="step-options">
@@ -38,5 +38,5 @@
     </section>
   </div>
 </main>
-<a href="/" class="back sticky-back">&larr; All Recipes</a>
+<a href="/" class="back sticky-back">{{__ "allRecipes"}}</a>
 <script src="/scripts/recipe.js"></script>

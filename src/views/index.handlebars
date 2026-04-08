@@ -1,18 +1,18 @@
 <header class="hero">
   <span class="hero-icon">&#127859;</span>
-  <h1>Simple Recipes</h1>
-  <p>Quick &amp; easy meals anyone can make.</p>
+  <h1>{{__ "siteTitle"}}</h1>
+  <p>{{__ "tagline"}}</p>
 </header>
 <main class="card-grid">
   {{#each recipes}}
-    <a class="card" href="/recipe/{{this.slug}}">
+    <a class="card" href="/{{this.slug}}">
       <div class="card-image">
         <img src="/images/{{this.image}}" alt="{{this.title}}">
       </div>
       <div class="card-body">
         <h2>{{this.title}}</h2>
         <p>{{this.description}}</p>
-        <span class="card-cta">View recipe &rarr;</span>
+        <span class="card-cta">{{__ "viewRecipe"}}</span>
       </div>
     </a>
   {{/each}}

@@ -1,142 +1,310 @@
 [
-  {
-    "slug": "cheese-sandwich",
-    "title": "Cheese Sandwich",
-    "image": "cheese-sandwich.jpg",
-    "description": "A classic, simple cheese sandwich. Yes, this counts as cooking.",
-    "ingredients": [
-      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
-      { "name": "Butter", "subtitle": "To taste" },
-      { "name": "Cheese", "subtitle": "Cheddar, gouda, Swiss, brie, etc." }
-    ],
-    "steps": [
-      "Butter both slices of bread.",
-      "Layer cheese slices on one side.",
-      "Close the sandwich. Congratulations, chef."
-    ]
-  },
-  {
-    "slug": "ham-sandwich",
-    "title": "Ham Sandwich",
-    "image": "ham-sandwich.jpg",
-    "description": "A hearty ham sandwich. Slightly fancier than cheese. Barely.",
-    "ingredients": [
-      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
-      { "name": "Butter", "subtitle": "To taste" },
-      { "name": "Ham", "subtitle": "Smoked, honey-glazed, deli-sliced, etc." }
-    ],
-    "steps": [
-      "Butter both slices of bread.",
-      "Layer ham slices on one side.",
-      "Close the sandwich. Try not to brag about your culinary skills."
-    ]
-  },
-  {
-    "slug": "hagelslag-sandwich",
-    "title": "Hagelslag Sandwich",
-    "image": "hagelslag-sandwich.jpg",
-    "description": "A Dutch classic \u2014 chocolate sprinkles on bread. Don't knock it till you've tried it.",
-    "ingredients": [
-      { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
-      { "name": "Butter", "subtitle": "To taste" },
-      { "name": "Hagelslag", "subtitle": "Milk chocolate, dark chocolate, fruit-flavored, etc." }
-    ],
-    "steps": [
-      "Butter a slice of bread generously.",
-      "Cover the buttered side with a thick layer of hagelslag.",
-      "Optionally top with a second slice, fold it closed, or eat open-faced like the maniac you are."
-    ]
-  },
-  {
-    "slug": "other-sandwich",
-    "title": "Other Sandwich",
-    "image": "other-sandwich.jpg",
-    "description": "We don't have what you want, so figure it out yourself.",
-    "ingredients": [
-      { "name": "Bread", "subtitle": "White, whole wheat, sourdough, rye, ciabatta, etc." },
-      { "name": "Butter or spread", "subtitle": "Butter, mayo, mustard, hummus, etc. To taste" },
-      { "name": "Filling of choice", "subtitle": "Peanut butter, jam, Nutella, cream cheese, cold cuts, veggies, etc." }
-    ],
-    "steps": [
-      "Spread your condiment of choice on the bread.",
-      "Add your filling.",
-      "Close the sandwich. You're on your own from here."
-    ]
-  },
-  {
-    "slug": "tosti",
-    "title": "Tosti",
-    "image": "tosti.jpg",
-    "description": "A hot, crispy grilled sandwich. The pinnacle of Dutch engineering.",
-    "ingredients": [
-      { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
-      { "name": "Butter", "subtitle": "To taste" },
-      { "name": "Cheese", "subtitle": "Gouda, cheddar, emmental, etc." },
-      { "name": "Optional extras", "subtitle": "Ham, tomato, pesto, onion, etc." }
-    ],
-    "steps": [
-      "Butter the outside of both slices of bread.",
-      "Layer cheese (and any extras) between the slices.",
-      {
-        "text": "Grill your tosti:",
-        "options": [
-          "Tosti iron: close and grill until golden, about 3\u20134 minutes.",
-          "Frying pan: toast on medium heat, flipping once, until golden on both sides.",
-          "Oven/grill: place on a baking sheet at 200\u00b0C until the cheese melts and bread is crispy."
-        ]
-      },
-      "Cut diagonally. This is non-negotiable."
-    ]
-  },
-  {
-    "slug": "fried-egg",
-    "title": "Fried Egg",
-    "image": "fried-egg.webp",
-    "description": "A simple egg. Somehow people still manage to mess this up.",
-    "ingredients": [
-      { "name": "Egg", "subtitle": "One or more, any size" },
-      { "name": "Butter or oil", "subtitle": "To taste" },
-      { "name": "Salt & pepper", "subtitle": "To taste" }
-    ],
-    "steps": [
-      "Heat a pan on medium with a little butter or oil.",
-      {
-        "text": "Prepare your egg:",
-        "options": [
-          "Sunny side up: crack into the pan, cook without flipping until the white is set but the yolk is runny.",
-          "Over easy: cook sunny side up, then flip and cook for just 15\u201330 seconds.",
-          "Over medium: flip and cook for about 1 minute for a partially set yolk.",
-          "Over hard: flip and cook for 2\u20133 minutes until the yolk is fully set.",
-          "Scrambled: whisk eggs in a bowl, pour into the pan, and stir gently until just set.",
-          "Omelette: whisk eggs, pour into the pan, let set, add fillings, and fold in half."
-        ]
-      },
-      "Season with salt and pepper.",
-      "Serve immediately. Cold eggs are a cry for help."
-    ]
-  },
-  {
-    "slug": "bringing-your-own",
-    "title": "I'm Bringing My Own",
-    "image": "bringing-your-own.jpg",
-    "description": "Too good for our recipes? Fine. Here's how to heat your leftovers.",
-    "ingredients": [
-      { "name": "Your food", "subtitle": "Leftovers, meal prep, takeout, anything goes" },
-      { "name": "Container", "subtitle": "Tupperware, lunch box, foil-wrapped, etc." }
-    ],
-    "steps": [
-      "Bring your food in a sealed container.",
-      "Store in the fridge if it needs to stay cool.",
-      {
-        "text": "Heat your food (if needed):",
-        "options": [
-          "Microwave: transfer to a microwave-safe container, heat in 1-minute intervals, stir in between.",
-          "Oven: preheat to 180\u00b0C, place in an oven-safe dish, and heat for 10\u201315 minutes.",
-          "Stovetop: pour into a pan and warm on medium heat, stirring occasionally.",
-          "Eat it cold: some things are just fine at room temperature."
-        ]
-      },
-      "Enjoy your meal. You're welcome for the microwave instructions."
-    ]
-  }
+    {
+        "slug": "cheese-sandwich",
+        "image": "cheese-sandwich.jpg",
+        "title": {
+            "en-gb": "Cheese Sandwich",
+            "nl-nl": "Broodje Kaas"
+        },
+        "description": {
+            "en-gb": "A classic, simple cheese sandwich. Yes, this counts as cooking.",
+            "nl-nl": "Een klassiek, simpel broodje kaas. Ja, dit telt als koken."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
+                { "name": "Butter", "subtitle": "To taste" },
+                { "name": "Cheese", "subtitle": "Cheddar, gouda, Swiss, brie, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Brood", "subtitle": "Wit, volkoren, zuurdesem, etc." },
+                { "name": "Boter", "subtitle": "Naar smaak" },
+                { "name": "Kaas", "subtitle": "Cheddar, Gouda, Zwitserse, brie, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Butter both slices of bread.",
+                "Layer cheese slices on one side.",
+                "Close the sandwich. Congratulations, chef."
+            ],
+            "nl-nl": [
+                "Beboter beide sneetjes brood.",
+                "Leg kaasplakken op \u00e9\u00e9n kant.",
+                "Klap het broodje dicht. Gefeliciteerd, chef."
+            ]
+        }
+    },
+    {
+        "slug": "ham-sandwich",
+        "image": "ham-sandwich.jpg",
+        "title": {
+            "en-gb": "Ham Sandwich",
+            "nl-nl": "Broodje Ham"
+        },
+        "description": {
+            "en-gb": "A hearty ham sandwich. Slightly fancier than cheese. Barely.",
+            "nl-nl": "Een stevig broodje ham. Iets chiquer dan kaas. Amper."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Bread", "subtitle": "White, whole wheat, sourdough, etc." },
+                { "name": "Butter", "subtitle": "To taste" },
+                { "name": "Ham", "subtitle": "Smoked, honey-glazed, deli-sliced, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Brood", "subtitle": "Wit, volkoren, zuurdesem, etc." },
+                { "name": "Boter", "subtitle": "Naar smaak" },
+                { "name": "Ham", "subtitle": "Gerookt, honingglazuur, dunne plakken, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Butter both slices of bread.",
+                "Layer ham slices on one side.",
+                "Close the sandwich. Try not to brag about your culinary skills."
+            ],
+            "nl-nl": [
+                "Beboter beide sneetjes brood.",
+                "Leg hamplakken op \u00e9\u00e9n kant.",
+                "Klap het broodje dicht. Probeer niet te pochen over je culinaire vaardigheden."
+            ]
+        }
+    },
+    {
+        "slug": "hagelslag-sandwich",
+        "image": "hagelslag-sandwich.jpg",
+        "title": {
+            "en-gb": "Hagelslag Sandwich",
+            "nl-nl": "Broodje Hagelslag"
+        },
+        "description": {
+            "en-gb": "A Dutch classic \u2014 chocolate sprinkles on bread. Don't knock it till you've tried it.",
+            "nl-nl": "Een Nederlandse klassieker \u2014 chocoladehagelslag op brood. Niet afdoen voordat je het geprobeerd hebt."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
+                { "name": "Butter", "subtitle": "To taste" },
+                { "name": "Hagelslag", "subtitle": "Milk chocolate, dark chocolate, fruit-flavored, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Brood", "subtitle": "Wit of volkoren, gesneden" },
+                { "name": "Boter", "subtitle": "Naar smaak" },
+                { "name": "Hagelslag", "subtitle": "Melkchocolade, puur, vruchtenhagel, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Butter a slice of bread generously.",
+                "Cover the buttered side with a thick layer of hagelslag.",
+                "Optionally top with a second slice, fold it closed, or eat open-faced like the maniac you are."
+            ],
+            "nl-nl": [
+                "Beboter een snee brood royaal.",
+                "Bedek de beboterde kant met een dikke laag hagelslag.",
+                "Eventueel een tweede snee erop, dichtklappen, of open eten zoals de gestoorde die je bent."
+            ]
+        }
+    },
+    {
+        "slug": "other-sandwich",
+        "image": "other-sandwich.jpg",
+        "title": {
+            "en-gb": "Other Sandwich",
+            "nl-nl": "Ander Broodje"
+        },
+        "description": {
+            "en-gb": "We don't have what you want, so figure it out yourself.",
+            "nl-nl": "We hebben niet wat je wilt, dus zoek het lekker zelf uit."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Bread", "subtitle": "White, whole wheat, sourdough, rye, ciabatta, etc." },
+                { "name": "Butter or spread", "subtitle": "Butter, mayo, mustard, hummus, etc. To taste" },
+                { "name": "Filling of choice", "subtitle": "Peanut butter, jam, Nutella, cream cheese, cold cuts, veggies, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Brood", "subtitle": "Wit, volkoren, zuurdesem, rogge, ciabatta, etc." },
+                { "name": "Boter of beleg", "subtitle": "Boter, mayo, mosterd, hummus, etc. Naar smaak" },
+                { "name": "Vulling naar keuze", "subtitle": "Pindakaas, jam, Nutella, roomkaas, vleeswaren, groenten, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Spread your condiment of choice on the bread.",
+                "Add your filling.",
+                "Close the sandwich. You're on your own from here."
+            ],
+            "nl-nl": [
+                "Smeer je broodbeleg naar keuze op het brood.",
+                "Voeg je vulling toe.",
+                "Klap het broodje dicht. Verder ben je op jezelf aangewezen."
+            ]
+        }
+    },
+    {
+        "slug": "tosti",
+        "image": "tosti.jpg",
+        "title": {
+            "en-gb": "Tosti",
+            "nl-nl": "Tosti"
+        },
+        "description": {
+            "en-gb": "A hot, crispy grilled sandwich. The pinnacle of Dutch engineering.",
+            "nl-nl": "Een warme, knapperige tosti. Het hoogtepunt van Nederlandse ingenieurskunst."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Bread", "subtitle": "White or whole wheat, sliced" },
+                { "name": "Butter", "subtitle": "To taste" },
+                { "name": "Cheese", "subtitle": "Gouda, cheddar, emmental, etc." },
+                { "name": "Optional extras", "subtitle": "Ham, tomato, pesto, onion, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Brood", "subtitle": "Wit of volkoren, gesneden" },
+                { "name": "Boter", "subtitle": "Naar smaak" },
+                { "name": "Kaas", "subtitle": "Gouda, cheddar, emmental, etc." },
+                { "name": "Optionele extra's", "subtitle": "Ham, tomaat, pesto, ui, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Butter the outside of both slices of bread.",
+                "Layer cheese (and any extras) between the slices.",
+                {
+                    "text": "Grill your tosti:",
+                    "options": [
+                        "Tosti iron: close and grill until golden, about 3\u20134 minutes.",
+                        "Frying pan: toast on medium heat, flipping once, until golden on both sides.",
+                        "Oven/grill: place on a baking sheet at 200\u00b0C until the cheese melts and bread is crispy."
+                    ]
+                },
+                "Cut diagonally. This is non-negotiable."
+            ],
+            "nl-nl": [
+                "Beboter de buitenkant van beide sneetjes brood.",
+                "Leg kaas (en eventuele extra's) tussen de sneetjes.",
+                {
+                    "text": "Grill je tosti:",
+                    "options": [
+                        "Tosti-ijzer: dichtklappen en grillen tot goudbruin, ongeveer 3\u20134 minuten.",
+                        "Koekenpan: op middelhoog vuur roosteren, \u00e9\u00e9n keer omdraaien, tot goudbruin aan beide kanten.",
+                        "Oven/grill: op een bakplaat bij 200\u00b0C tot de kaas smelt en het brood knapperig is."
+                    ]
+                },
+                "Diagonaal doorsnijden. Dit is niet-onderhandelbaar."
+            ]
+        }
+    },
+    {
+        "slug": "fried-egg",
+        "image": "fried-egg.webp",
+        "title": {
+            "en-gb": "Fried Egg",
+            "nl-nl": "Gebakken Ei"
+        },
+        "description": {
+            "en-gb": "A simple egg. Somehow people still manage to mess this up.",
+            "nl-nl": "Een simpel ei. Op de een of andere manier lukt het mensen nog steeds om dit te verprutsen."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Egg", "subtitle": "One or more, any size" },
+                { "name": "Butter or oil", "subtitle": "To taste" },
+                { "name": "Salt & pepper", "subtitle": "To taste" }
+            ],
+            "nl-nl": [
+                { "name": "Ei", "subtitle": "Een of meer, elk formaat" },
+                { "name": "Boter of olie", "subtitle": "Naar smaak" },
+                { "name": "Zout & peper", "subtitle": "Naar smaak" }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Heat a pan on medium with a little butter or oil.",
+                {
+                    "text": "Prepare your egg:",
+                    "options": [
+                        "Sunny side up: crack into the pan, cook without flipping until the white is set but the yolk is runny.",
+                        "Over easy: cook sunny side up, then flip and cook for just 15\u201330 seconds.",
+                        "Over medium: flip and cook for about 1 minute for a partially set yolk.",
+                        "Over hard: flip and cook for 2\u20133 minutes until the yolk is fully set.",
+                        "Scrambled: whisk eggs in a bowl, pour into the pan, and stir gently until just set.",
+                        "Omelette: whisk eggs, pour into the pan, let set, add fillings, and fold in half."
+                    ]
+                },
+                "Season with salt and pepper.",
+                "Serve immediately. Cold eggs are a cry for help."
+            ],
+            "nl-nl": [
+                "Verwarm een pan op middelhoog vuur met een beetje boter of olie.",
+                {
+                    "text": "Bereid je ei:",
+                    "options": [
+                        "Spiegelei: breek in de pan, bak zonder omdraaien tot het wit gestold is maar de dooier nog vloeibaar.",
+                        "Gebakken ei (zacht): bak als spiegelei, draai dan om en bak nog 15\u201330 seconden.",
+                        "Gebakken ei (medium): omdraaien en ongeveer 1 minuut bakken voor een gedeeltelijk gestolde dooier.",
+                        "Gebakken ei (hard): omdraaien en 2\u20133 minuten bakken tot de dooier volledig gestold is.",
+                        "Roerei: klop eieren in een kom, giet in de pan en roer zachtjes tot net gestold.",
+                        "Omelet: klop eieren, giet in de pan, laat stollen, voeg vulling toe en vouw dubbel."
+                    ]
+                },
+                "Breng op smaak met zout en peper.",
+                "Direct serveren. Koude eieren zijn een noodkreet."
+            ]
+        }
+    },
+    {
+        "slug": "bringing-your-own",
+        "image": "bringing-your-own.jpg",
+        "title": {
+            "en-gb": "I'm Bringing My Own",
+            "nl-nl": "Ik Neem M'n Eigen Mee"
+        },
+        "description": {
+            "en-gb": "Too good for our recipes? Fine. Here's how to heat your leftovers.",
+            "nl-nl": "Te goed voor onze recepten? Prima. Hier is hoe je je restjes opwarmt."
+        },
+        "ingredients": {
+            "en-gb": [
+                { "name": "Your food", "subtitle": "Leftovers, meal prep, takeout, anything goes" },
+                { "name": "Container", "subtitle": "Tupperware, lunch box, foil-wrapped, etc." }
+            ],
+            "nl-nl": [
+                { "name": "Je eten", "subtitle": "Restjes, meal prep, afhaal, alles mag" },
+                { "name": "Bakje", "subtitle": "Tupperware, lunchbox, in folie gewikkeld, etc." }
+            ]
+        },
+        "steps": {
+            "en-gb": [
+                "Bring your food in a sealed container.",
+                "Store in the fridge if it needs to stay cool.",
+                {
+                    "text": "Heat your food (if needed):",
+                    "options": [
+                        "Microwave: transfer to a microwave-safe container, heat in 1-minute intervals, stir in between.",
+                        "Oven: preheat to 180\u00b0C, place in an oven-safe dish, and heat for 10\u201315 minutes.",
+                        "Stovetop: pour into a pan and warm on medium heat, stirring occasionally.",
+                        "Eat it cold: some things are just fine at room temperature."
+                    ]
+                },
+                "Enjoy your meal. You're welcome for the microwave instructions."
+            ],
+            "nl-nl": [
+                "Neem je eten mee in een afgesloten bakje.",
+                "Bewaar in de koelkast als het koel moet blijven.",
+                {
+                    "text": "Warm je eten op (indien nodig):",
+                    "options": [
+                        "Magnetron: doe over in een magnetronbestendig bakje, verwarm in intervallen van 1 minuut, tussendoor roeren.",
+                        "Oven: verwarm voor op 180\u00b0C, doe in een ovenschaal en verwarm 10\u201315 minuten.",
+                        "Fornuis: giet in een pan en verwarm op middelhoog vuur, af en toe roeren.",
+                        "Koud eten: sommige dingen zijn prima op kamertemperatuur."
+                    ]
+                },
+                "Eet smakelijk. Graag gedaan voor de magnetroninstructies."
+            ]
+        }
+    }
 ]

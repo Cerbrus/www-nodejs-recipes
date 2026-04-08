@@ -15,7 +15,9 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1",
-    "express-handlebars": "^9.0.1"
+    "express-handlebars": "^9.0.1",
+    "handlebars-i18n": "^1.10.5",
+    "i18next": "^26.0.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

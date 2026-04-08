@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{locale}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,14 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <div class="lang-switch">
+    <button data-lang="en-gb" title="English">&#127468;&#127463;</button>
+    <button data-lang="nl-nl" title="Nederlands">&#127475;&#127473;</button>
+  </div>
   {{{body}}}
   <footer>
-    <p>Made with care &middot; Simple Recipes</p>
+    <p>{{__ "footer"}}</p>
   </footer>
+  <script src="/scripts/lang.js"></script>
 </body>
 </html>
