@@ -1,4 +1,4 @@
-const currentLang = localStorage.getItem('lang') || 'en-gb';
+const currentLang = localStorage.getItem('lang') || 'en';
 document.cookie = `lang=${currentLang};path=/;max-age=31536000`;
 
 document.querySelectorAll<HTMLButtonElement>('.lang-switch button').forEach(btn => {

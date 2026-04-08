@@ -5,20 +5,20 @@ import HandlebarsI18n from "handlebars-i18n";
 import Handlebars from "handlebars";
 import path from "path";
 import allRecipes from "./recipes.json";
-import enGb from "./locales/en-gb.json";
-import nlNl from "./locales/nl-nl.json";
+import en from "./locales/en.json";
+import nl from "./locales/nl.json";
 
-const LOCALES = ["en-gb", "nl-nl"] as const;
+const LOCALES = ["en", "nl"] as const;
 type Locale = (typeof LOCALES)[number];
-const DEFAULT_LOCALE: Locale = "en-gb";
+const DEFAULT_LOCALE: Locale = "en";
 
 async function main() {
     await i18next.init({
         lng: DEFAULT_LOCALE,
         fallbackLng: DEFAULT_LOCALE,
         resources: {
-            "en-GB": {translation: enGb},
-            "nl-NL": {translation: nlNl},
+            en: {translation: en},
+            nl: {translation: nl},
         },
     });
 
@@ -41,7 +41,7 @@ async function main() {
 
     function getLocale(req: Request): Locale {
         const cookie = req.headers.cookie || "";
-        const match = cookie.match(/lang=(en-gb|nl-nl)/);
+        const match = cookie.match(/lang=(en|nl)/);
         return (match ? match[1] : DEFAULT_LOCALE) as Locale;
     }
 
