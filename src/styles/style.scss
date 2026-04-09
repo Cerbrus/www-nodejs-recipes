@@ -129,8 +129,9 @@ h1, h2, h3 {
 // ---------- Card grid ----------
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.75rem;
     max-width: 1000px;
     margin: 0 auto;
@@ -139,6 +140,7 @@ h1, h2, h3 {
 }
 
 .card {
+    width: 298px;
     background: $color-surface;
     border-radius: $radius;
     overflow: hidden;
